@@ -1,0 +1,41 @@
+.Name {
+  font-weight: 300;
+  color: blue;
+}
+.School {
+  color: crimson;
+}
+
+.Total {
+  color: darkmagenta;
+}
+
+.formatstyle {
+  text-align: center;
+  font-size: large;
+}
+
+.Score {
+  color: forestgreen;
+}
+
+.container2 {
+  float: left;
+}
+
+th,
+td {
+  text-align: left;
+  color: forestgreen;
+  border: 4px solid black;
+  border-style: double;
+}
+
+.card2 {
+  border: 2px;
+  border-style: solid;
+  padding: 10px;
+  width: auto;
+  float: left;
+  position: relative;
+}
