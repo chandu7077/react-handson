@@ -1,0 +1,24 @@
+.of {
+padding-right: 40px;
+}
+
+.ofb {
+    padding-bottom: 40px;;
+}
+
+.textRed {
+    color:red;
+}
+.textGreen {
+    color:green;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.col {
+    border-left: 6px solid green;
+    height: inherit;
+    display: inline-block; 
+  }
