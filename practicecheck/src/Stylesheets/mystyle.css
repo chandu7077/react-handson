@@ -1,0 +1,39 @@
+.row {
+    padding-top: 20px;
+}
+
+.card-text {
+    height: 100px;
+}
+
+.red {
+    color: red;
+}
+
+label {
+    float: left;
+}
+
+.lgn-btn{
+    float: left;
+}
+
+.form {
+    padding-left: 100px;
+}
+
+.watch {
+    margin-left: 15px;
+    background-color:#0069D9;
+    color: white;
+}
+
+.card-col {
+padding-top: 20px;
+}
+
+.remove {
+    margin-left: 15px;
+    background-color:#be2e35;
+    color: white;
+}
