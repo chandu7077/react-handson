@@ -6,6 +6,7 @@ import LoginComponent from "../src/components/logincomponent";
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import React, { useState,  } from 'react';
 import WatchListComponent from '../src/components/watchlistcomponent';
+import PerformanceComponent from "../src/components/performancecomponent";
 class App extends React.Component {
   
   constructor(props){
@@ -43,6 +44,9 @@ export function Body(props) {
       </Route>
       <Route path="/watchlist">
           <WatchListComponent userid={props.userid} isLoggedin={props.isLoggedin}/>
+      </Route>
+      <Route path="/compare">
+          <PerformanceComponent userid={props.userid} isLoggedin={props.isLoggedin}/>
       </Route>
       </Switch>
     </BrowserRouter>

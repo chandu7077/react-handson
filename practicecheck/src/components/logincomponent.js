@@ -1,8 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import ReactDOM from 'react-dom';
-import App from "../App";
-import { Redirect } from 'react-router-dom'
 import API from "../api";
 export default class LoginComponent extends React.Component {
     
@@ -123,11 +121,11 @@ export default class LoginComponent extends React.Component {
                 showEmailError={this.state.showEmailError} showPwdError={this.state.showPwdError}/>
                 </div>
                 <div class="form-group">
-                <label for="email">Email address<span class="red">*</span></label>
+                <label class="login-label" for="email">Email address<span class="red">*</span></label>
                 <input type="email" class="form-control" onChange={this.handleChange} name="email" id="email" placeholder="Enter email"></input>
                 </div>
                 <div class="form-group">
-                <label for="pwd">Password<span class="red">*</span></label>
+                <label class="login-label" for="pwd">Password<span class="red">*</span></label>
                 <input type="password" name="pwd" onChange={this.handleChange} class="form-control" placeholder="Enter password" id="pwd"></input>
                 </div>
                 <button class="btn btn-primary lgn-btn" type="submit">Submit</button>

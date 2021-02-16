@@ -2,8 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Api from '../api';
 import {CompanyDetailsComponent} from "./companydetailscomponent";
-import { Redirect } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
+
 export default class WatchListComponent extends React.Component{
     constructor(props) {
         super(props);
@@ -25,7 +24,7 @@ export default class WatchListComponent extends React.Component{
         console.log(url);
         Api.delete(url)
         .then(response => {
-            this.setState({state:this.state});
+            this.setState({data:this.state.data.filter(company=>company.company.companyId!=event.target.id)});
         })
         .catch(error=>{
             console.log(error);
@@ -33,8 +32,11 @@ export default class WatchListComponent extends React.Component{
     }
 
     render() {
-        console.log("*******",this.state.data)
-        return (
+
+        return this.state.data.length==0 ? 
+        <div ><h3>Watch List is emptyt</h3></div>
+        :
+         (
         <div class="container-fluid products">
         <div class="row container">
         {

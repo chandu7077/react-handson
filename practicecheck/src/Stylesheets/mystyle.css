@@ -10,7 +10,7 @@
     color: red;
 }
 
-label {
+.login-label {
     float: left;
 }
 
@@ -36,4 +36,17 @@ padding-top: 20px;
     margin-left: 15px;
     background-color:#be2e35;
     color: white;
+}
+
+.droplist, dropdown {
+   
+    padding-top: 10px;
+}
+
+.form-row {
+    margin-left: 40px;
+}
+
+.fetch {
+    padding-top: 10px;
 }

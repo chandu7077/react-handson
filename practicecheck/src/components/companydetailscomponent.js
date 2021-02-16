@@ -1,7 +1,6 @@
 import React from 'react';
 import Api from '../api';
-
-
+import "bootstrap/dist/css/bootstrap.css";
 export class CompanyListComponent extends React.Component {
     constructor(props) {
         super(props);

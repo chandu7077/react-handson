@@ -17,7 +17,7 @@ export function NavbarUser() {
                   <a class="nav-link" href="/watchlist">Watch List</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/comapre">Compare Performance</a>
+                  <a class="nav-link" href="/compare">Compare Performance</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="/logout">Logout</a>
