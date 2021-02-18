@@ -9,10 +9,11 @@ import 'bootstrap';
 import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 import Popper from 'popper.js';
+import {BrowserRouter} from "react-router-dom";
 ReactDOM.render(
-  <React.StrictMode>
-    <App isLoggedin={false}/>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

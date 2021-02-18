@@ -2,12 +2,25 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import ReactDOM from 'react-dom';
 import API from "../api";
+import App from "../App";
+import auth from "../components/auth";
+import {BrowserRouter, Redirect} from "react-router-dom";
 export default class LoginComponent extends React.Component {
     
     constructor(props) {
         super(props);
+        console.log(props.location)
+        try {
+        if(props.location.pathname==="/logout") {
+            auth.logout()
+            }
+         }
+        catch(error) {
+            
+        }
         this.setLoginState=props.setLoginState;
         this.state = {
+          loginStatus:auth.isLoggedin(),
           showValidMessage:false,
           showPwdError:false,
           showEmailError:false,
@@ -53,16 +66,18 @@ export default class LoginComponent extends React.Component {
             API.post("users", user)
             .then(data => {
                 isValid=true;
-                console.log(data)
-                this.setLoginState(true);
+                
+                auth.login(()=>{
+                    this.setState({loginStatus:true});
+                    this.setLoginState();
+                });
+                console.log(auth.isLoggedin());
+                
             })
             .catch(error => {
              console.log(error)
              isValid=false;
              this.state.showValidMessage=true;
-                ReactDOM.render( 
-                    <Error showValidMessage={this.state.showValidMessage} errors={this.state.errors} showEmailError={this.state.showEmailError} showPwdError={this.state.showPwdError}/>
-                     , rootElement);
             })
 
         }
@@ -107,11 +122,14 @@ export default class LoginComponent extends React.Component {
         this.setState({errors, [name]: value}, ()=> {
             console.log(errors)
         });
-        console.log(errors);
     }
 
     render() {
     return (
+        this.state.loginStatus
+        ?
+        <Redirect to="/companies"/>
+        :
         <div class="row container form">
             <form class="col col-sm-8" onSubmit={this.handleSubmit}>
                 <h2 class="label">Let's Get Started By Login</h2>
@@ -136,7 +154,6 @@ export default class LoginComponent extends React.Component {
 }
 const validateForm = (errors) => {
     let valid = true;
-    console.log(errors)
     Object.values(errors).forEach(
       (val) => val.length > 0 && (valid = false)
     );

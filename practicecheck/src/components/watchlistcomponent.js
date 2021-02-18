@@ -1,12 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Api from '../api';
+import auth from "../components/auth";
 import {CompanyDetailsComponent} from "./companydetailscomponent";
 
 export default class WatchListComponent extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { userid:props.userid, data: [], watch:0, isLoggedin:props.isLoggedin };
+        console.log(props.isLoggedin);
+        this.state = { userid:auth.getUid(), data: [], watch:0, isLoggedin:auth.isLoggedin() };
     }
 
     async componentDidMount() {

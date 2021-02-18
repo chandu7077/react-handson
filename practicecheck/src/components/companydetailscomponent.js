@@ -1,10 +1,13 @@
 import React from 'react';
 import Api from '../api';
 import "bootstrap/dist/css/bootstrap.css";
+import auth from './auth';
 export class CompanyListComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { userid:props.userid, data: [], watch:-1, isLoggedin:props.isLoggedin };
+        
+        this.state = { userid:auth.getUid(), data: [], watch:-1, isLoggedin:auth.isLoggedin() };
+        console.log(this.state.userid);
       }
 
     async componentDidMount() {
